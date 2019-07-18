@@ -16,6 +16,7 @@ spec:
         image: ah8ad3/kube
         ports:
         - containerPort: 8000
+        imagePullPolicy: Always
 ---
 apiVersion: v1
 kind: Service
