@@ -17,7 +17,7 @@ COPY . /app/
 RUN  apk add --no-cache postgresql-libs && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev
 RUN pip install -r req.txt
 
-RUN ./manage.py makemigrations 
-RUN ./manage.py migrate
+#RUN ./manage.py makemigrations 
+#RUN ./manage.py migrate
 
 CMD python manage.py runserver 0.0.0.0:8000
