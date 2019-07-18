@@ -4,6 +4,7 @@ cache: pip
 
 services:
   - docker
+  - postgresql
 
 matrix:
   include:
