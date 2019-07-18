@@ -1,0 +1,23 @@
+sudo: false
+language: python
+cache: pip
+
+services:
+  - docker
+
+matrix:
+  include:
+  - python: 3.6
+    dist: xenial
+    env: PY3.6
+install:
+    - pip install -r requirement.txt
+
+script:
+    - coverage run --source=./ ./manage.localy.py test
+
+after_success:
+    - docker build -t ah8ad3/kube:latest .
+    - docker login -u $DOCKER_USER -p $DOCKER_PASS
+    - docker push ah8ad3/kube 
+

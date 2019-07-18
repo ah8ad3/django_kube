@@ -18,4 +18,4 @@ RUN pip install -r req.txt
 RUN ./manage.py makemigrations 
 RUN ./manage.py migrate
 
-CMD ["python", "manage.py", "runserver"]
+CMD python manage.py runserver 0.0.0.0:8000
